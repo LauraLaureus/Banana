@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D788F536-57B9-9403-9A81-C15A0CD04895}</ProjectGuid>
+    <ProjectGuid>{0392DF8C-DAC0-7A7A-924A-4102057BB880}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Motions\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\Scripts\BananaBehaviour.cs" />
      <Compile Include="Assets\Scripts\BooterDisplay.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
@@ -65,9 +64,6 @@
      <Compile Include="Assets\Scripts\UserCharacterController.cs" />
      <None Include="Assets\Fonts\Font License - Please Read.txt" />
      <None Include="Assets\Standard Assets\shader\DifSpecTransp.shader" />
-     <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-     <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\DiffuseReflectiveShader.shader" />
-     <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Models\Mr. Mo Base Character\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

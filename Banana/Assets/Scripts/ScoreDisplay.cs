@@ -16,6 +16,6 @@ public class ScoreDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		if(player != null)
-			txt.text = "Score: " + player.GetComponent<ScoreCounter> ().score.ToString();
+			txt.text = " " + player.GetComponent<ScoreCounter> ().score.ToString();
 	}
 }

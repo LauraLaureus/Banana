@@ -17,6 +17,6 @@ public class DistanceDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		if(player != null)
-			txt.text = "Distance: " + player.GetComponent<ScoreCounter> ().distance.ToString();
+			txt.text = " " + player.GetComponent<ScoreCounter> ().distance.ToString();
 	}
 }

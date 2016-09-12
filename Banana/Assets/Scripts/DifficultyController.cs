@@ -15,7 +15,7 @@ public class DifficultyController : MonoBehaviour {
 	
 
 	void FixedUpdate () {
-		difficulty += 0.00001f; 
+		difficulty += 0.001f; 
 		if(shareDifficulty != null)
 			shareDifficulty(difficulty);
 	}

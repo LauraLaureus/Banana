@@ -19,6 +19,7 @@ public class LevelGenerator : MonoBehaviour {
 	void generate(){
 		float r = Random.value;
 		if (r < f ()) {
+			wasLastOneZero = false;
 			genPlatform ();
 		} 
 		else{
@@ -27,6 +28,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 	}
 
+	//TODO buscar una función matemática con forma de escalera que reciba de entrada el tiempo. 
 	float f(){
 		return 0.5f;
 	}
@@ -49,14 +51,14 @@ public class LevelGenerator : MonoBehaviour {
 			Instantiate (prefab, new Vector3 (6f, 3.5f, gameObject.transform.position.z), Quaternion.identity);
 		} 
 		else {
-			genBanana (7f);
-			Instantiate (prefab, new Vector3 (6f, 7f, gameObject.transform.position.z), Quaternion.identity);
+			genBanana (8f);
+			Instantiate (prefab, new Vector3 (6f, 8f, gameObject.transform.position.z), Quaternion.identity);
 		}
 	}
 
 	void genBanana(float height){
 		if (Random.value < f3())
-			Instantiate (banana, new Vector3 (0.8f, height+1f, gameObject.transform.position.z), Quaternion.identity);
+			Instantiate (banana, new Vector3 (0.8f, height+2f, transform.position.z-4f), Quaternion.identity);
 	}
 
 

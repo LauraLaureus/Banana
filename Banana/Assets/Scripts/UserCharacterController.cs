@@ -18,7 +18,7 @@ public class UserCharacterController : MonoBehaviour {
 		Fall
 	}
 
-	private PlayerState state = PlayerState.Forward;
+	public PlayerState state = PlayerState.Forward;
 	private bool landed = false;
 	private int jumps;
 	private int maxJumps = 2;
@@ -81,6 +81,8 @@ public class UserCharacterController : MonoBehaviour {
 			playerInput += rightArrowController.useSpeedBooster ();
 			if (onPlayerForward != null)
 				onPlayerForward (playerInput);
+		} else {
+			playerInput = rightArrowController.getCoolDownSpeed();
 		}
 		
 		rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y,forwardAdjustement+playerInput);
@@ -102,8 +104,7 @@ public class UserCharacterController : MonoBehaviour {
 			animator.SetBool("Falling", true);
 			moveForward ();
 			if (landed) {
-				animator.SetBool("Falling", false);
-				ChangeState (PlayerState.Forward);
+				changeStateToForward();
 			}
 			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				animator.SetBool("Falling", false);
@@ -118,15 +119,23 @@ public class UserCharacterController : MonoBehaviour {
 		if (col.gameObject.name == "Enemy") {
 			Destroy (this.gameObject);
 		}
-		if (col.gameObject.CompareTag ("Terrain")) {
-			jumps = 0;
-			landed = true;
-			animator.SetBool("Falling", false);
-			animator.SetFloat ("ForwardAdjustement", forwardAdjustement);
+		if (col.gameObject.CompareTag ("Terrain") || col.gameObject.CompareTag ("Platform")  ) {
+			changeStateToForward ();
 		}
+
 	}
+
+
 
 	void boosterCaught(){
 		rightArrowController.recoverSpeedBooster ();
+	}
+
+	void changeStateToForward(){
+		jumps = 0;
+		landed = true;
+		animator.SetBool("Falling", false);
+		animator.SetFloat ("ForwardAdjustement", forwardAdjustement);
+		ChangeState (PlayerState.Forward);
 	}
 }

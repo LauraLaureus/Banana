@@ -16,6 +16,6 @@ public class BooterDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		if (player != null)
-			txt.text = "Left" + (3 - player.GetComponent<ForwardKeyController> ().speedBoosterUsed).ToString();
+			txt.text = "Left: " + (3 - player.GetComponent<ForwardKeyController> ().speedBoosterUsed).ToString() +"/3";
 	}
 }

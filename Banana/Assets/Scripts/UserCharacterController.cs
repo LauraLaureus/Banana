@@ -117,6 +117,7 @@ public class UserCharacterController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.name == "Enemy") {
+			GameObject.Find ("GameOver").SendMessage ("gameover");
 			Destroy (this.gameObject);
 		}
 		if (col.gameObject.CompareTag ("Terrain") || col.gameObject.CompareTag ("Platform")  ) {

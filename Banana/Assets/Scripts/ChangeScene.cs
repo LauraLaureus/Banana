@@ -7,8 +7,10 @@ public class ChangeScene : MonoBehaviour {
 	public void changeScene(string scene){
 		if (scene.Equals ("Quit"))
 			Application.Quit ();
-		else
+		else {
+			Time.timeScale = 1;
 			SceneManager.LoadScene (scene);
+		}
 	}
 
 

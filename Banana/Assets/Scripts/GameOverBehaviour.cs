@@ -12,9 +12,13 @@ public class GameOverBehaviour : MonoBehaviour {
 	
 
 	void gameover () {
+		
 		background.SetActive (true);
 		text.SetActive (true);
 		playButton.SetActive (true);
 		menuButton.SetActive (true);
+		Time.timeScale = 0;
 	}
+
+
 }
